@@ -1,9 +1,17 @@
+
+[BITS 16]
+
 [org 0x7c00]
 jmp boot_start
 
 %include "src/print_16.asm"
 
 boot_start:
+	call clr_scr_16
+	call hide_cursor_16
+	call reset_cursor_16
+	
+	
 	mov si, IN_16_MODE
 	call print_str_16
 	
