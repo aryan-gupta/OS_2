@@ -64,3 +64,15 @@ reset_cursor_16: ; http://www.ctyme.com/intr/rb-0087.htm
 	int 0x10
 	popa
 	ret
+
+; Waits for a key
+; precondition: bh contains scan code to wait for
+wait_for_key: ; http://www.ctyme.com/intr/rb-1754.htm
+	pusha
+  .wait:
+	mov ah, 0x00
+	int 0x16
+	cmp ah, bh
+	jne .wait
+	popa
+	ret
