@@ -1,5 +1,7 @@
 ; Contains functions pertaining to printing in 16-bit real mode
 
+[BITS 16]
+
 ; prints a letter
 ; precondition: al stores the letter (8 bits) to be printed
 print_ltr_16:
