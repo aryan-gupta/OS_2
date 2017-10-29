@@ -7,6 +7,13 @@ boot_start:
 	mov si, IN_16_MODE
 	call print_str_16
 	
+	call print_nl_16
+	
+	mov si, WELCOME
+	call print_str_16
+	
+	call print_nl_16
+	
 	jmp boot_end
 	
 
