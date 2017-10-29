@@ -15,7 +15,7 @@ print_str_16:
 	pusha
   .ps_repeat:
 	lodsb ; loads letter at si to al
-	cmp al, 0
+	test al, al ; optimized version of cmp al, 0
 	je .ps_ret
 	call print_ltr_16
 	jmp .ps_repeat ; repeat
