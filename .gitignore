@@ -1,0 +1,25 @@
+# Please feel free to add anything here if you guys are using another IDE
+
+# Compiled Binaries
+*.exe
+*.out
+*.o
+*.slo
+*.lo
+*.obj
+*.bin
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Logs and tmp files
+*.log
+*.tmp
+
+# OS dependent stuffs
+$RECYCLE.BIN/
+Desktop.ini
+.DS_Store
+Thumbs.db
+ehthumbs.db
