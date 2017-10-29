@@ -14,12 +14,12 @@ print_ltr_16:
 print_str_16:
 	pusha
   .ps_repeat:
-	lods ; loads letter at si to al
+	lodsb ; loads letter at si to al
 	cmp al, 0
 	je .ps_ret
 	call print_ltr_16
 	jmp .ps_repeat ; repeat
-  .ps_ret
+  .ps_ret:
 	popa
 	ret
 
