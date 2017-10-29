@@ -17,4 +17,4 @@ boot: $(BINDIR)/$(EXE)
 
 .PHONY: run
 run: boot
-	$(EMU) $(BINDIR)/$(EXE)
+	$(EMU) -fda $(BINDIR)/$(EXE)
