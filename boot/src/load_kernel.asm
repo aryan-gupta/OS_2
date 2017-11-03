@@ -1,7 +1,3 @@
-
-
-
-
 [BITS 16]
 
 ; Loads kernal into memory
@@ -10,7 +6,8 @@
 ; 	cl constins the sector from which to start
 ; 	dh constins the track to read from
 ; 	dl constins the drive to read
-load_kernal:
+
+load_kernel:
 	pusha
 	; push dx ; push it because it will be overwritten in inturupt
 	
@@ -24,21 +21,21 @@ load_kernal:
 	
 	int 0x13
 	
-	jc kernal_load_error
+	jc kernel_load_error
 	
 	; pop dx
     cmp al, 0x02 ; 'al' is now the # of sectors sucessfully read
-    jne kernal_load_error
+    jne kernel_load_error
 	
 	popa
 	ret
 	
-kernal_load_error:
+kernel_load_error:
 	mov si, LOAD_ERROR
 	call print_str_16
 	call print_nl_16
 	call boot_end
 	
 BOOT_DRIVE: db 0
-LOAD_ERROR: db 'Error Loading Kernal. Exiting...', 0
+LOAD_ERROR: db 'Error Loading Kernel. Exiting...', 0
 
