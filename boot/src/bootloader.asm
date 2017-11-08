@@ -39,7 +39,7 @@ SystemID              db  "FAT32   "
 
 
 %include "src/print_16.asm"
-%include "src/load_kernal.asm"
+%include "src/load_stage2.asm"
 
 [BITS 16]
 boot_start:
