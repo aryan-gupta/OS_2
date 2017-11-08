@@ -5,7 +5,7 @@
 jmp boot_start
 
 %include "src/print_16.asm"
-%include "src/load_kernal.asm"
+%include "src/load_kernel.asm"
 %include "src/gd_table.asm"
 %include "src/switch_32.asm"
 %include "src/print_32.asm"
@@ -39,9 +39,9 @@ boot_start:
 	call print_str_16
 	call print_nl_16
 	
-	call load_kernal
+	call load_kernel
 	
-	mov si, KERNAL_LOADED
+	mov si, KERNEL_LOADED
 	call print_str_16
 	call print_nl_16
 
@@ -71,7 +71,7 @@ IN_32_MODE: db 'In 32-bit mode', 0
 ;PRESS_ENTER: db 'Press enter to continue booting', 0
 ;ENTER_PRESSED: db 'Enter pressed, booting into OS-2...', 0
 ;WELCOME: db 'Welcome to OS-2', 0
-KERNAL_LOADED: db 'Kernel loaded sucessfully', 0
+KERNEL_LOADED: db 'Kernel loaded sucessfully', 0
 SWITCH_32: db 'Switching to 32-bit Mode', 0
 	
 
@@ -80,4 +80,3 @@ boot_end:
 
 times 510-($-$$) db 0
 dw 0xaa55
-	
