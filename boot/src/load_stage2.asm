@@ -1,16 +1,13 @@
-
-
-
+; Finds the stage 2 boot loader then loads the bootloader
 
 [BITS 16]
-
 ; Loads kernal into memory
 ; 	al contains num sectors to load
 ; 	ch contains the cylinder to load
 ; 	cl constins the sector from which to start
 ; 	dh constins the track to read from
 ; 	dl constins the drive to read
-load_kernal:
+load_stage2:
 	pusha
 	; push dx ; push it because it will be overwritten in inturupt
 	
